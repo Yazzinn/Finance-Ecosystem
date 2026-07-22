@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Finance Roadmap</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#667eea;--secondary:#764ba2;--success:#2ecc71;--danger:#e74c3c;--warning:#f39c12;--dark:#2c3e50;--light:#ecf0f1;--shadow:0 4px 20px rgba(0,0,0,0.1)}body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;background:#f5f7fa;display:flex;min-height:100vh}.sidebar{width:250px;background:linear-gradient(180deg,var(--primary),var(--secondary));padding:20px 0;color:#fff;position:fixed;height:100vh;left:0;top:0;overflow-y:auto;transition:transform .3s ease;z-index:1000}.sidebar-header{padding:0 20px 30px 20px;border-bottom:1px solid rgba(255,255,255,0.2)}.sidebar-header h2{font-size:24px;margin-bottom:5px}.sidebar-header p{opacity:.8;font-size:14px}.nav-menu{list-style:none;padding:20px 0}.nav-item{padding:14px 25px;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:12px;font-size:16px;border-left:3px solid transparent}.nav-item:hover{background:rgba(255,255,255,0.1);border-left-color:#fff}.nav-item.active{background:rgba(255,255,255,0.2);border-left-color:#fff;font-weight:bold}.nav-item i{width:22px}.main-content{margin-left:250px;flex:1;padding:20px 30px 30px 30px;width:calc(100% - 250px)}.top-header{display:flex;justify-content:space-between;align-items:center;padding:15px 25px;background:#fff;border-radius:15px;margin-bottom:25px;box-shadow:var(--shadow)}.menu-toggle{display:none;background:0 0;border:none;font-size:24px;cursor:pointer;color:var(--dark)}#pageTitle{font-size:24px;color:var(--dark)}.header-right{color:#7f8c8d;font-size:14px}.page{display:none;animation:fadeIn .4s ease}.page.active{display:block}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:25px}.card{background:#fff;padding:20px;border-radius:15px;box-shadow:var(--shadow);transition:transform .2s}.card:hover{transform:translateY(-3px)}.card-overview h3{font-size:13px;color:#7f8c8d;margin-bottom:8px}.card-overview .amount{font-size:22px;font-weight:bold;color:var(--dark)}.card-overview.highlight{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.card-overview.highlight .amount{color:#fff}.card-overview.highlight h3{color:rgba(255,255,255,0.8)}.freedom-card{background:#fff;padding:25px;border-radius:15px;box-shadow:var(--shadow);margin-bottom:25px}.freedom-card h3{margin-bottom:15px;color:var(--dark)}.progress-bar{height:12px;background:var(--light);border-radius:10px;overflow:hidden;margin:10px 0}.progress-fill{height:100%;background:linear-gradient(90deg,var(--success),#27ae60);border-radius:10px;transition:width .6s ease}#freedomText{font-size:14px;color:#7f8c8d}.chart-card{background:#fff;padding:25px;border-radius:15px;box-shadow:var(--shadow)}.mode-header{background:#fff;padding:20px 25px;border-radius:15px;box-shadow:var(--shadow);margin-bottom:20px}.mode-header-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}.mode-header h2{color:var(--dark);margin-bottom:8px}.mode-header p{font-size:16px;color:#7f8c8d}.mode-header p span{font-weight:bold;color:var(--dark);font-size:20px}.personal-summary{display:flex;gap:30px;margin-top:15px;flex-wrap:wrap}.summary-item{display:flex;flex-direction:column;gap:4px}.summary-item .label{font-size:13px;color:#7f8c8d}.summary-item .value{font-size:24px;font-weight:bold}.summary-item .value.positive{color:#2ecc71}.summary-item .value.negative{color:#e74c3c}.expense-detail-card{background:#fff;padding:20px;border-radius:15px;box-shadow:var(--shadow);margin-bottom:20px}.expense-detail-card h4{margin-bottom:15px;color:var(--dark)}.expense-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.expense-item{background:#f8f9fa;padding:12px 15px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}.expense-item .cat-name{font-size:14px;color:#555}.expense-item .cat-amount{font-size:15px;font-weight:bold;color:#e74c3c}.expense-empty{color:#7f8c8d;text-align:center;padding:20px;grid-column:1/-1}.action-buttons{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}.btn-primary,.btn-secondary,.btn-success,.btn-danger,.btn-reset,.btn-transfer{padding:12px 24px;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:#5a6fd6;transform:translateY(-2px)}.btn-secondary{background:var(--light);color:var(--dark)}.btn-secondary:hover{background:#d5d8dc}.btn-success{background:var(--success);color:#fff}.btn-success:hover{background:#27ae60}.btn-danger{background:var(--danger);color:#fff}.btn-danger:hover{background:#c0392b}.btn-reset{background:#e74c3c;color:#fff}.btn-reset:hover{background:#c0392b;transform:translateY(-2px)}.btn-transfer{background:#3498db;color:#fff}.btn-transfer:hover{background:#2980b9;transform:translateY(-2px)}.transaction-form{background:#fff;padding:25px;border-radius:15px;box-shadow:var(--shadow);margin-bottom:20px}.transaction-form h4{margin-bottom:15px;color:var(--dark)}.transaction-form select,.transaction-form input{width:100%;padding:12px;margin-bottom:12px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;transition:border-color .3s}.transaction-form select:focus,.transaction-form input:focus{border-color:var(--primary);outline:none}.transaction-form .btn-success,.transaction-form .btn-danger{width:48%}.profit-options{margin:12px 0}.profit-options label{display:block;margin-bottom:6px;font-size:14px}.profit-options select{width:100%;padding:10px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;background:#fff}#profitInputContainer{margin-bottom:12px}.history-container{background:#fff;padding:20px;border-radius:15px;box-shadow:var(--shadow)}.history-container h4{margin-bottom:15px;color:var(--dark)}.history-list{max-height:400px;overflow-y:auto}.history-item{display:flex;justify-content:space-between;padding:12px 15px;border-bottom:1px solid var(--light);align-items:center}.history-item:last-child{border-bottom:none}.history-item .left{display:flex;flex-direction:column;gap:2px}.history-item .category{font-size:13px;color:#7f8c8d}.history-item .amount.positive{color:var(--success);font-weight:bold}.history-item .amount.negative{color:var(--danger);font-weight:bold}.history-item .note{font-size:12px;color:#95a5a6}.business-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:20px 0}.stat-card{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow);text-align:center}.stat-card p{font-size:13px;color:#7f8c8d;margin-bottom:5px}.stat-card h3{font-size:20px;color:var(--dark)}.portfolio-simple{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:20px 0}.asset-card{background:#fff;padding:18px;border-radius:15px;box-shadow:var(--shadow);display:flex;align-items:center;gap:15px;transition:transform .2s}.asset-card:hover{transform:translateY(-3px)}.asset-card .asset-icon{font-size:28px;width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#f5f7fa}.asset-card.green .asset-icon{background:#d5f5e3}.asset-card.blue .asset-icon{background:#d6eaf8}.asset-card.purple .asset-icon{background:#ebdef0}.asset-card.yellow .asset-icon{background:#fef9e7}.asset-card.gray .asset-icon{background:#f0f0f0}.asset-card.red .asset-icon{background:#fadbd8}.asset-card .asset-info{display:flex;flex-direction:column}.asset-card .asset-label{font-size:12px;color:#7f8c8d}.asset-card .asset-value{font-size:16px;font-weight:bold;color:var(--dark)}.networth-box{background:linear-gradient(135deg,#f093fb,#f5576c);padding:25px;border-radius:15px;color:#fff;text-align:center;margin:20px 0}.networth-box h3{font-size:18px;opacity:.9}.networth-box p{font-size:36px;font-weight:bold;margin:10px 0}.networth-box small{opacity:.8}.goal-form{background:#fff;padding:25px;border-radius:15px;box-shadow:var(--shadow);margin-bottom:20px}.goal-list{display:grid;gap:15px}.goal-item{background:#fff;padding:20px;border-radius:12px;box-shadow:var(--shadow)}.goal-item .goal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.goal-item .goal-name{font-weight:bold;font-size:18px;color:var(--dark)}.goal-item .goal-progress-text{font-size:14px;color:#7f8c8d}.goal-item .progress-bar{height:10px;background:var(--light);border-radius:8px;overflow:hidden}.goal-item .progress-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:8px;transition:width .5s ease}@media(max-width:768px){.sidebar{transform:translateX(-100%);width:280px}.sidebar.open{transform:translateX(0)}.main-content{margin-left:0;width:100%;padding:15px}.menu-toggle{display:block}.dashboard-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.card-overview .amount{font-size:18px}.business-stats{grid-template-columns:1fr}.portfolio-simple{grid-template-columns:1fr 1fr}.personal-summary{flex-direction:column;gap:10px}.summary-item .value{font-size:20px}.expense-breakdown{grid-template-columns:1fr 1fr}}@media(max-width:480px){.portfolio-simple{grid-template-columns:1fr}.action-buttons{flex-direction:column}.action-buttons button{width:100%;justify-content:center}.transaction-form .btn-success,.transaction-form .btn-danger{width:100%;margin-bottom:8px}.expense-breakdown{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Finance</h2>
+            <p>Roadmap</p>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item active" data-page="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</li>
+            <li class="nav-item" data-page="personal"><i class="fas fa-user"></i> Pribadi</li>
+            <li class="nav-item" data-page="business"><i class="fas fa-store"></i> Bisnis</li>
+            <li class="nav-item" data-page="portfolio"><i class="fas fa-coins"></i> Portofolio</li>
+            <li class="nav-item" data-page="goals"><i class="fas fa-bullseye"></i> Goals</li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <h1 id="pageTitle">Dashboard</h1>
+            <div class="header-right"><span id="currentDate"></span></div>
+        </header>
+
+        <!-- ===== DASHBOARD ===== -->
+        <section id="page-dashboard" class="page active">
+            <div class="dashboard-grid">
+                <div class="card card-overview"><h3><i class="fas fa-wallet"></i> Total Uang Tunai</h3><p class="amount" id="totalCash">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-user"></i> Saldo Pribadi</h3><p class="amount" id="personalBalance">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-store"></i> Saldo Bisnis</h3><p class="amount" id="businessBalance">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-chart-line"></i> Total Aset</h3><p class="amount" id="totalAssets">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-exclamation-triangle"></i> Total Utang</h3><p class="amount" id="totalDebt">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-percent"></i> Profit Bisnis</h3><p class="amount" id="businessProfit">Rp0</p></div>
+                <div class="card card-overview"><h3><i class="fas fa-hand-holding-usd"></i> Total Investasi</h3><p class="amount" id="totalInvestment">Rp0</p></div>
+                <div class="card card-overview highlight"><h3><i class="fas fa-crown"></i> Net Worth</h3><p class="amount" id="netWorth">Rp0</p></div>
+            </div>
+            <div class="freedom-card">
+                <h3><i class="fas fa-rocket"></i> Target Financial Freedom</h3>
+                <div class="freedom-progress">
+                    <div class="progress-bar"><div class="progress-fill" id="freedomProgress" style="width:0%"></div></div>
+                    <p id="freedomText">Rp0 / Rp0 (0%)</p>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3><i class="fas fa-chart-area"></i> Grafik Pertumbuhan Kekayaan</h3>
+                <canvas id="growthChart" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- ===== PERSONAL PAGE ===== -->
+        <section id="page-personal" class="page">
+            <div class="mode-header">
+                <div class="mode-header-top">
+                    <h2>💼 Mode Pribadi</h2>
+                    <button class="btn-reset" onclick="resetMode('personal')" style="padding:8px 16px;font-size:13px;"><i class="fas fa-undo"></i> Reset Pribadi</button>
+                </div>
+                <div class="personal-summary">
+                    <div class="summary-item"><span class="label">💰 Total Saldo</span><span class="value positive" id="personalSaldo">Rp0</span></div>
+                    <div class="summary-item"><span class="label">📉 Total Pengeluaran</span><span class="value negative" id="personalTotalExpense">Rp0</span></div>
+                </div>
+            </div>
+            <div class="expense-detail-card">
+                <h4><i class="fas fa-list-ul"></i> Detail Pengeluaran</h4>
+                <div id="expenseBreakdown" class="expense-breakdown"></div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="showAddTransaction('personal')"><i class="fas fa-plus"></i> Tambah Transaksi</button>
+                <button class="btn-secondary" onclick="showTransfer('personal')"><i class="fas fa-exchange-alt"></i> Transfer</button>
+            </div>
+            <div id="personalForm" class="transaction-form" style="display:none;">
+                <h4>Tambah Transaksi Pribadi</h4>
+                <select id="personalType"><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select>
+                <select id="personalCategory">
+                    <option value="Gaji">Gaji</option><option value="Bonus">Bonus</option><option value="Hadiah">Hadiah</option>
+                    <option value="Pengembalian">Pengembalian Uang</option><option value="Pinjaman">Pinjaman</option>
+                    <option value="Dividen">Dividen</option><option value="Investasi">Investasi</option>
+                    <option value="Makanan">🍔 Makanan</option><option value="Transportasi">🚗 Transportasi</option>
+                    <option value="Pendidikan">📚 Pendidikan</option><option value="Kesehatan">💊 Kesehatan</option>
+                    <option value="Hiburan">🎮 Hiburan</option><option value="Tagihan">📱 Tagihan</option>
+                    <option value="Sedekah">🤲 Sedekah</option><option value="Lainnya">Lainnya</option>
+                </select>
+                <input type="number" id="personalAmount" placeholder="Nominal (Rp)">
+                <input type="text" id="personalNote" placeholder="Catatan (opsional)">
+                <button class="btn-success" onclick="addTransaction('personal')">Simpan</button>
+                <button class="btn-danger" onclick="hideForm('personalForm')">Batal</button>
+            </div>
+            <div class="history-container">
+                <h4>📋 Riwayat Transaksi</h4>
+                <div id="personalHistory" class="history-list"></div>
+            </div>
+        </section>
+
+        <!-- ===== BUSINESS PAGE ===== -->
+        <section id="page-business" class="page">
+            <div class="mode-header">
+                <div class="mode-header-top">
+                    <h2>🏪 Mode Bisnis</h2>
+                    <button class="btn-reset" onclick="resetMode('business')" style="padding:8px 16px;font-size:13px;"><i class="fas fa-undo"></i> Reset Bisnis</button>
+                </div>
+                <div class="personal-summary">
+                    <div class="summary-item"><span class="label">🏦 Saldo Bank (Modal)</span><span class="value positive" id="businessSaldo">Rp0</span></div>
+                    <div class="summary-item"><span class="label">📈 Total Profit</span><span class="value positive" id="businessProfitDisplay">Rp0</span></div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="showAddTransaction('business')"><i class="fas fa-plus"></i> Catat Penjualan</button>
+                <button class="btn-secondary" onclick="showAddModal('business')"><i class="fas fa-hand-holding-usd"></i> Tambah Modal</button>
+                <button class="btn-danger" onclick="showReduceModal('business')"><i class="fas fa-minus-circle"></i> Kurangi Modal</button>
+                <button class="btn-transfer" onclick="showTransfer('business')"><i class="fas fa-exchange-alt"></i> Transfer</button>
+            </div>
+            <div id="businessForm" class="transaction-form" style="display:none;">
+                <h4>📝 Catat Penjualan</h4>
+                <p style="font-size:13px;color:#7f8c8d;margin-bottom:10px;"><i class="fas fa-info-circle"></i> Saldo akan berkurang sesuai nominal penjualan</p>
+                <input type="number" id="businessAmount" placeholder="Nominal Penjualan (Rp)" required>
+                <div class="profit-options">
+                    <label><strong>Mode Profit:</strong></label>
+                    <select id="profitMode" onchange="toggleProfitInput()">
+                        <option value="manual">✏️ Manual</option>
+                        <option value="percentage">📊 Persentase (%)</option>
+                        <option value="fixed">🔒 Tetap</option>
+                        <option value="none">🚫 Tanpa Profit</option>
+                    </select>
+                </div>
+                <div id="profitInputContainer"><input type="number" id="businessProfit" placeholder="Profit (Rp / % / Tetap)" value="0"></div>
+                <input type="text" id="businessNote" placeholder="Catatan (opsional)">
+                <button class="btn-success" onclick="addTransaction('business')">Simpan</button>
+                <button class="btn-danger" onclick="hideForm('businessForm')">Batal</button>
+            </div>
+            <div id="addModalForm" class="transaction-form" style="display:none;">
+                <h4>➕ Tambah Modal</h4>
+                <input type="number" id="addModalAmount" placeholder="Nominal Tambah Modal (Rp)" required>
+                <input type="text" id="addModalNote" placeholder="Catatan (opsional)">
+                <button class="btn-success" onclick="addModal()">Tambah Modal</button>
+                <button class="btn-danger" onclick="hideForm('addModalForm')">Batal</button>
+            </div>
+            <div id="reduceModalForm" class="transaction-form" style="display:none;">
+                <h4>➖ Kurangi Modal</h4>
+                <input type="number" id="reduceModalAmount" placeholder="Nominal Kurangi Modal (Rp)" required>
+                <input type="text" id="reduceModalNote" placeholder="Catatan (opsional)">
+                <button class="btn-danger" onclick="reduceModal()">Kurangi Modal</button>
+                <button class="btn-danger" onclick="hideForm('reduceModalForm')">Batal</button>
+            </div>
+            <div class="business-stats">
+                <div class="stat-card"><p>📊 Profit Hari Ini</p><h3 id="todayProfit">Rp0</h3></div>
+                <div class="stat-card"><p>📈 Profit Bulan Ini</p><h3 id="monthProfit">Rp0</h3></div>
+                <div class="stat-card"><p>📅 Profit Tahun Ini</p><h3 id="yearProfit">Rp0</h3></div>
+                <div class="stat-card"><p>🔄 Total Transaksi</p><h3 id="totalBusinessTx">0</h3></div>
+                <div class="stat-card"><p>💹 Rata-rata Profit</p><h3 id="avgProfit">Rp0</h3></div>
+                <div class="stat-card"><p>💰 Total Omset</p><h3 id="totalOmset">Rp0</h3></div>
+            </div>
+            <div class="history-container">
+                <h4>📋 Riwayat Transaksi Bisnis</h4>
+                <div id="businessHistory" class="history-list"></div>
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO PAGE ===== -->
+        <section id="page-portfolio" class="page">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+                <h2>📈 Portofolio & Aset</h2>
+                <button class="btn-reset" onclick="resetMode('portfolio')" style="padding:8px 16px;font-size:13px;"><i class="fas fa-undo"></i> Reset Portofolio</button>
+            </div>
+            <div class="networth-box">
+                <h3>💎 Total Kekayaan Bersih</h3>
+                <p id="portfolioNetWorth">Rp0</p>
+                <small>Total Aset - Total Liabilitas</small>
+            </div>
+            <div class="portfolio-simple">
+                <div class="asset-card green"><div class="asset-icon">💵</div><div class="asset-info"><span class="asset-label">Likuid</span><span class="asset-value" id="liquidTotal">Rp0</span></div></div>
+                <div class="asset-card blue"><div class="asset-icon">📈</div><div class="asset-info"><span class="asset-label">Investasi</span><span class="asset-value" id="investmentTotal">Rp0</span></div></div>
+                <div class="asset-card purple"><div class="asset-icon">🏪</div><div class="asset-info"><span class="asset-label">Bisnis</span><span class="asset-value" id="businessAssetTotal">Rp0</span></div></div>
+                <div class="asset-card yellow"><div class="asset-icon">🏠</div><div class="asset-info"><span class="asset-label">Aset Produktif</span><span class="asset-value" id="productiveTotal">Rp0</span></div></div>
+                <div class="asset-card gray"><div class="asset-icon">📱</div><div class="asset-info"><span class="asset-label">Aset Pribadi</span><span class="asset-value" id="personalAssetTotal">Rp0</span></div></div>
+                <div class="asset-card red"><div class="asset-icon">💳</div><div class="asset-info"><span class="asset-label">Liabilitas</span><span class="asset-value" id="liabilityTotal">Rp0</span></div></div>
+            </div>
+            <button class="btn-primary" onclick="showAddAsset()" style="width:100%;margin-top:15px;"><i class="fas fa-plus"></i> Tambah Aset / Utang</button>
+            <div id="assetForm" class="transaction-form" style="display:none;margin-top:15px;">
+                <h4>Tambah Aset / Utang</h4>
+                <select id="assetCategory">
+                    <option value="liquid">💵 Likuid</option><option value="investment">📈 Investasi</option>
+                    <option value="business">🏪 Bisnis</option><option value="productive">🏠 Aset Produktif</option>
+                    <option value="personal">📱 Aset Pribadi</option><option value="liability">💳 Liabilitas</option>
+                </select>
+                <input type="text" id="assetName" placeholder="Nama Aset/Utang">
+                <input type="number" id="assetValue" placeholder="Nilai (Rp)">
+                <button class="btn-success" onclick="addAsset()">Simpan</button>
+                <button class="btn-danger" onclick="hideForm('assetForm')">Batal</button>
+            </div>
+            <div class="history-container" style="margin-top:20px;">
+                <h4>📋 Daftar Aset & Utang</h4>
+                <div id="assetList" class="history-list"></div>
+            </div>
+        </section>
+
+        <!-- ===== GOALS ===== -->
+        <section id="page-goals" class="page">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+                <h2>🎯 Financial Goals</h2>
+                <button class="btn-reset" onclick="resetMode('goals')" style="padding:8px 16px;font-size:13px;"><i class="fas fa-undo"></i> Reset Goals</button>
+            </div>
+            <div class="goal-form">
+                <h4>Buat Target Baru</h4>
+                <select id="goalType">
+                    <option value="Dana Darurat">Dana Darurat</option>
+                    <option value="Dana Pendidikan">Dana Pendidikan</option>
+                    <option value="Dana Menikah">Dana Menikah</option>
+                    <option value="Modal Bisnis">Modal Bisnis</option>
+                    <option value="Dana Pensiun">Dana Pensiun</option>
+                    <option value="Financial Freedom">Financial Freedom</option>
+                </select>
+                <input type="number" id="goalTarget" placeholder="Target (Rp)">
+                <button class="btn-success" onclick="addGoal()">Tambahkan</button>
+            </div>
+            <div id="goalList" class="goal-list"></div>
+        </section>
+    </main>
+
+    <script>
+        // ====== DATA STORE ======
+        let data = { transactions: { personal: [], business: [] }, assets: [], goals: [], businessModal: [] };
+
+        // ====== INIT ======
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+            updateAll();
+            setupNavigation();
+            setupMenuToggle();
+            updateDate();
+            renderGoals();
+            renderAssetList();
+            toggleProfitInput();
+        });
+
+        // ====== LOCAL STORAGE ======
+        function loadData() {
+            const saved = localStorage.getItem('financeRoadmap');
+            if (saved) data = JSON.parse(saved);
+            if (!data.businessModal) data.businessModal = [];
+        }
+        function saveData() { localStorage.setItem('financeRoadmap', JSON.stringify(data)); }
+
+        // ====== NAVIGATION ======
+        function setupNavigation() {
+            const items = document.querySelectorAll('.nav-item');
+            const pages = document.querySelectorAll('.page');
+            const titles = { dashboard: 'Dashboard', personal: 'Mode Pribadi', business: 'Mode Bisnis', portfolio: 'Portofolio', goals: 'Financial Goals' };
+            items.forEach(item => {
+                item.addEventListener('click', function() {
+                    const page = this.dataset.page;
+                    items.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    pages.forEach(p => p.classList.remove('active'));
+                    document.getElementById('page-' + page).classList.add('active');
+                    document.getElementById('pageTitle').textContent = titles[page] || page;
+                    document.getElementById('sidebar').classList.remove('open');
+                    updateAll();
+                });
+            });
+        }
+
+        function setupMenuToggle() {
+            document.getElementById('menuToggle').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.toggle('open');
+            });
+        }
+
+        function updateDate() {
+            const now = new Date();
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('id-ID', {
+                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+            });
+        }
+
+        // ====== RESET MODE ======
+        function resetMode(mode) {
+            const msgs = {
+                personal: 'Yakin mau reset semua data Pribadi?',
+                business: 'Yakin mau reset semua data Bisnis?',
+                portfolio: 'Yakin mau reset semua data Portofolio?',
+                goals: 'Yakin mau reset semua target Goals?'
+            };
+            if (!confirm(msgs[mode])) return;
+            if (mode === 'personal') data.transactions.personal = [];
+            else if (mode === 'business') { data.transactions.business = []; data.businessModal = []; }
+            else if (mode === 'portfolio') data.assets = [];
+            else if (mode === 'goals') data.goals = [];
+            saveData();
+            updateAll();
+            alert('✅ Data ' + mode + ' berhasil di-reset!');
+        }
+
+        // ====== FORM HANDLERS ======
+        function showAddTransaction(mode) {
+            const formId = mode === 'personal' ? 'personalForm' : 'businessForm';
+            document.getElementById(formId).style.display = 'block';
+            document.getElementById(formId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showTransfer(mode) {
+            alert('Fitur Transfer antar mode akan segera hadir!\nMode: ' + mode);
+        }
+
+        function hideForm(formId) {
+            document.getElementById(formId).style.display = 'none';
+        }
+
+        function showAddModal(mode) {
+            if (mode === 'business') {
+                document.getElementById('addModalForm').style.display = 'block';
+                document.getElementById('addModalForm').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function showReduceModal(mode) {
+            if (mode === 'business') {
+                document.getElementById('reduceModalForm').style.display = 'block';
+                document.getElementById('reduceModalForm').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ====== PROFIT MODE TOGGLE ======
+        function toggleProfitInput() {
+            const mode = document.getElementById('profitMode').value;
+            const container = document.getElementById('profitInputContainer');
+            const input = document.getElementById('businessProfit');
+            if (mode === 'none') {
+                container.style.display = 'none';
+                input.value = '0';
+            } else {
+                container.style.display = 'block';
+                input.placeholder = mode === 'percentage' ? 'Persentase (%)' : mode === 'fixed' ? 'Profit Tetap (Rp)' : 'Profit Manual (Rp)';
+                input.value = '';
+            }
+        }
+
+        // ====== ADD MODAL ======
+        function addModal() {
+            const amount = parseInt(document.getElementById('addModalAmount').value);
+            const note = document.getElementById('addModalNote').value || 'Tambah Modal';
+            if (!amount || amount <= 0) { alert('Masukkan nominal yang valid!'); return; }
+            data.transactions.business.push({
+                amount: amount, profit: 0, profitMode: 'modal_add',
+                note: note + ' (➕ Tambah Modal)',
+                date: new Date().toISOString(), isModal: true
+            });
+            data.businessModal.push({ type: 'add', amount, note, date: new Date().toISOString() });
+            saveData();
+            updateAll();
+            document.getElementById('addModalForm').style.display = 'none';
+            document.getElementById('addModalAmount').value = '';
+            document.getElementById('addModalNote').value = '';
+        }
+
+        // ====== REDUCE MODAL ======
+        function reduceModal() {
+            const amount = parseInt(document.getElementById('reduceModalAmount').value);
+            const note = document.getElementById('reduceModalNote').value || 'Kurangi Modal';
+            if (!amount || amount <= 0) { alert('Masukkan nominal yang valid!'); return; }
+            data.transactions.business.push({
+                amount: -amount, profit: 0, profitMode: 'modal_reduce',
+                note: note + ' (➖ Kurangi Modal)',
+                date: new Date().toISOString(), isModal: true
+            });
+            data.businessModal.push({ type: 'reduce', amount, note, date: new Date().toISOString() });
+            saveData();
+            updateAll();
+            document.getElementById('reduceModalForm').style.display = 'none';
+            document.getElementById('reduceModalAmount').value = '';
+            document.getElementById('reduceModalNote').value = '';
+        }
+
+        // ====== ADD TRANSACTION ======
+        function addTransaction(mode) {
+            if (mode === 'personal') {
+                const type = document.getElementById('personalType').value;
+                const category = document.getElementById('personalCategory').value;
+                const amount = parseInt(document.getElementById('personalAmount').value);
+                const note = document.getElementById('personalNote').value || '-';
+                if (!amount || amount <= 0) { alert('Masukkan nominal yang valid!'); return; }
+                const finalAmount = type === 'expense' ? -amount : amount;
+                data.transactions.personal.push({ type, category, amount: finalAmount, note, date: new Date().toISOString() });
+                saveData();
+                updateAll();
+                document.getElementById('personalForm').style.display = 'none';
+                document.getElementById('personalAmount').value = '';
+                document.getElementById('personalNote').value = '';
+            } else if (mode === 'business') {
+                const amount = parseInt(document.getElementById('businessAmount').value);
+                const profitMode = document.getElementById('profitMode').value;
+                let profit = 0;
+                const profitInput = document.getElementById('businessProfit').value;
+                const note = document.getElementById('businessNote').value || '-';
+                if (!amount || amount <= 0) { alert('Masukkan nominal transaksi yang valid!'); return; }
+                if (profitMode !== 'none' && profitInput) {
+                    const val = parseFloat(profitInput);
+                    if (profitMode === 'percentage') profit = Math.round(amount * (val / 100));
+                    else if (profitMode === 'fixed') profit = val;
+                    else profit = val;
+                }
+                data.transactions.business.push({
+                    amount: -amount, profit, profitMode,
+                    note: note + (profit > 0 ? ' (💰 Profit: ' + formatRupiah(profit) + ')' : ''),
+                    date: new Date().toISOString(), isModal: false
+                });
+                saveData();
+                updateAll();
+                document.getElementById('businessForm').style.display = 'none';
+                document.getElementById('businessAmount').value = '';
+                document.getElementById('businessProfit').value = '';
+                document.getElementById('businessNote').value = '';
+            }
+        }
+
+        // ====== CALCULATIONS ======
+        function calculatePersonalBalance() {
+            return data.transactions.personal.reduce((sum, tx) => sum + tx.amount, 0);
+        }
+        function calculatePersonalExpense() {
+            return data.transactions.personal.filter(tx => tx.amount < 0).reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+        }
+        function getExpenseByCategory() {
+            const expenses = {};
+            data.transactions.personal.filter(tx => tx.amount < 0).forEach(tx => {
+                const cat = tx.category || 'Lainnya';
+                expenses[cat] = (expenses[cat] || 0) + Math.abs(tx.amount);
+            });
+            return expenses;
+        }
+        function calculateBusinessBalance() {
+            return data.transactions.business.reduce((sum, tx) => sum + tx.amount, 0);
+        }
+        function calculateBusinessProfit() {
+            return data.transactions.business.reduce((sum, tx) => sum + (tx.profit || 0), 0);
+        }
+        function getTodayProfit() {
+            const today = new Date().toDateString();
+            return data.transactions.business.filter(tx => new Date(tx.date).toDateString() === today)
+                .reduce((sum, tx) => sum + (tx.profit || 0), 0);
+        }
+        function getMonthProfit() {
+            const now = new Date();
+            const currentMonth = now.getMonth(),
+                currentYear = now.getFullYear();
+            return data.transactions.business.filter(tx => {
+                const d = new Date(tx.date);
+                return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+            }).reduce((sum, tx) => sum + (tx.profit || 0), 0);
+        }
+        function getYearProfit() {
+            const currentYear = new Date().getFullYear();
+            return data.transactions.business.filter(tx => new Date(tx.date).getFullYear() === currentYear)
+                .reduce((sum, tx) => sum + (tx.profit || 0), 0);
+        }
+        function getTotalOmset() {
+            return data.transactions.business.filter(tx => !tx.isModal)
+                .reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+        }
+        function calculateTotalAssets() {
+            return data.assets.filter(a => a.category !== 'liability').reduce((sum, a) => sum + a.value, 0);
+        }
+        function calculateTotalDebt() {
+            return data.assets.filter(a => a.category === 'liability').reduce((sum, a) => sum + a.value, 0);
+        }
+        function calculateNetWorth() {
+            return calculateTotalAssets() - calculateTotalDebt();
+        }
+        function calculateTotalInvestment() {
+            return data.assets.filter(a => a.category === 'investment').reduce((sum, a) => sum + a.value, 0);
+        }
+        function getTotalCash() {
+            return calculatePersonalBalance() + calculateBusinessBalance();
+        }
+
+        // ====== UPDATE FUNCTIONS ======
+        function updateDashboard() {
+            document.getElementById('totalCash').textContent = formatRupiah(getTotalCash());
+            document.getElementById('personalBalance').textContent = formatRupiah(calculatePersonalBalance());
+            document.getElementById('businessBalance').textContent = formatRupiah(calculateBusinessBalance());
+            document.getElementById('totalAssets').textContent = formatRupiah(calculateTotalAssets());
+            document.getElementById('totalDebt').textContent = formatRupiah(calculateTotalDebt());
+            document.getElementById('businessProfit').textContent = formatRupiah(calculateBusinessProfit());
+            document.getElementById('totalInvestment').textContent = formatRupiah(calculateTotalInvestment());
+            document.getElementById('netWorth').textContent = formatRupiah(calculateNetWorth());
+        }
+
+        function updateFreedom() {
+            const goals = data.goals || [];
+            const freedomGoal = goals.find(g => g.type === 'Financial Freedom');
+            if (freedomGoal) {
+                const current = calculateNetWorth(),
+                    target = freedomGoal.target,
+                    progress = Math.min((current / target) * 100, 100);
+                document.getElementById('freedomProgress').style.width = progress + '%';
+                document.getElementById('freedomText').textContent = formatRupiah(current) + ' / ' + formatRupiah(target) + ' (' + Math.round(progress) + '%)';
+            } else {
+                document.getElementById('freedomProgress').style.width = '0%';
+                document.getElementById('freedomText').textContent = 'Belum ada target Financial Freedom';
+            }
+        }
+
+        function renderPersonalHistory() {
+            const container = document.getElementById('personalHistory');
+            const transactions = data.transactions.personal.slice().reverse();
+            if (transactions.length === 0) {
+                container.innerHTML = '<p style="color:#7f8c8d;text-align:center;padding:20px;">Belum ada transaksi</p>';
+                return;
+            }
+            container.innerHTML = transactions.map(tx => {
+                const isPositive = tx.amount > 0;
+                const sign = isPositive ? '+' : '';
+                return '<div class="history-item"><div class="left"><span>' + tx.category + '</span><span class="category">' + tx.note + ' • ' + new Date(tx.date).toLocaleDateString('id-ID') + '</span></div><span class="amount ' + (isPositive ? 'positive' : 'negative') + '">' + sign + formatRupiah(tx.amount) + '</span></div>';
+            }).join('');
+        }
+
+        function renderExpenseBreakdown() {
+            const container = document.getElementById('expenseBreakdown');
+            const expenses = getExpenseByCategory();
+            const sorted = Object.entries(expenses).sort((a, b) => b[1] - a[1]);
+            if (sorted.length === 0) {
+                container.innerHTML = '<div class="expense-empty">Belum ada pengeluaran</div>';
+                return;
+            }
+            const totalExpense = sorted.reduce((sum, [_, val]) => sum + val, 0);
+            container.innerHTML = sorted.map(([category, amount]) => {
+                const percentage = Math.round((amount / totalExpense) * 100);
+                return '<div class="expense-item"><span class="cat-name">' + category + '</span><span class="cat-amount">' + formatRupiah(amount) + ' <small style="font-weight:normal;color:#888;">(' + percentage + '%)</small></span></div>';
+            }).join('');
+        }
+
+        function renderBusinessHistory() {
+            const container = document.getElementById('businessHistory');
+            const transactions = data.transactions.business.slice().reverse();
+            if (transactions.length === 0) {
+                container.innerHTML = '<p style="color:#7f8c8d;text-align:center;padding:20px;">Belum ada transaksi</p>';
+                return;
+            }
+            container.innerHTML = transactions.map(tx => {
+                const isModal = tx.isModal || false;
+                const isAddModal = isModal && tx.amount > 0;
+                const isReduceModal = isModal && tx.amount < 0;
+                let icon = '💰',
+                    label = 'Penjualan',
+                    amountClass = 'negative',
+                    displayAmount = formatRupiah(tx.amount);
+                if (isAddModal) { icon = '➕';
+                    label = 'Tambah Modal';
+                    amountClass = 'positive';
+                    displayAmount = '+' + formatRupiah(tx.amount); } else if (isReduceModal) { icon = '➖';
+                    label = 'Kurangi Modal';
+                    amountClass = 'negative';
+                    displayAmount = '-' + formatRupiah(Math.abs(tx.amount)); } else if (!isModal && tx.amount < 0) { icon = '💸';
+                    label = 'Penjualan';
+                    amountClass = 'negative';
+                    displayAmount = '-' + formatRupiah(Math.abs(tx.amount)); }
+                const profitText = tx.profit ? '💰 Profit: ' + formatRupiah(tx.profit) : '🚫 Tanpa Profit';
+                const modeText = tx.profitMode && tx.profitMode !== 'none' ? '(' + tx.profitMode + ')' : '';
+                return '<div class="history-item"><div class="left"><span>' + icon + ' ' + label + '</span><span class="category">' + tx.note + ' • ' + profitText + ' ' + modeText + ' • ' + new Date(tx.date).toLocaleDateString('id-ID') + '</span></div><span class="amount ' + amountClass + '">' + displayAmount + '</span></div>';
+            }).join('');
+        }
+
+        function updatePersonal() {
+            document.getElementById('personalSaldo').textContent = formatRupiah(calculatePersonalBalance());
+            document.getElementById('personalTotalExpense').textContent = formatRupiah(calculatePersonalExpense());
+            renderPersonalHistory();
+            renderExpenseBreakdown();
+        }
+
+        function updateBusiness() {
+            const balance = calculateBusinessBalance();
+            const totalProfit = calculateBusinessProfit();
+            const todayProfit = getTodayProfit();
+            const monthProfit = getMonthProfit();
+            const yearProfit = getYearProfit();
+            const totalOmset = getTotalOmset();
+            document.getElementById('businessSaldo').textContent = formatRupiah(balance);
+            document.getElementById('businessProfitDisplay').textContent = formatRupiah(totalProfit);
+            document.getElementById('todayProfit').textContent = formatRupiah(todayProfit);
+            document.getElementById('monthProfit').textContent = formatRupiah(monthProfit);
+            document.getElementById('yearProfit').textContent = formatRupiah(yearProfit);
+            document.getElementById('totalOmset').textContent = formatRupiah(totalOmset);
+            const totalTx = data.transactions.business.length;
+            document.getElementById('totalBusinessTx').textContent = totalTx;
+            const totalProfitAll = data.transactions.business.reduce((sum, tx) => sum + (tx.profit || 0), 0);
+            const avgProfit = totalTx > 0 ? totalProfitAll / totalTx : 0;
+            document.getElementById('avgProfit').textContent = formatRupiah(avgProfit);
+            renderBusinessHistory();
+        }
+
+        function updatePortfolio() {
+            const cats = {
+                liquid: 'liquidTotal',
+                investment: 'investmentTotal',
+                business: 'businessAssetTotal',
+                productive: 'productiveTotal',
+                personal: 'personalAssetTotal',
+                liability: 'liabilityTotal'
+            };
+            Object.keys(cats).forEach(cat => {
+                const total = data.assets.filter(a => a.category === cat).reduce((sum, a) => sum + a.value, 0);
+                document.getElementById(cats[cat]).textContent = formatRupiah(total);
+            });
+            document.getElementById('portfolioNetWorth').textContent = formatRupiah(calculateNetWorth());
+            renderAssetList();
+        }
+
+        // ====== ASSET MANAGEMENT ======
+        function showAddAsset() {
+            document.getElementById('assetForm').style.display = 'block';
+            document.getElementById('assetForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function addAsset() {
+            const category = document.getElementById('assetCategory').value;
+            const name = document.getElementById('assetName').value.trim();
+            const value = parseInt(document.getElementById('assetValue').value);
+            if (!name || !value || value <= 0) { alert('Isi semua data dengan benar!'); return; }
+            data.assets.push({ category, name, value, date: new Date().toISOString() });
+            saveData();
+            updateAll();
+            document.getElementById('assetForm').style.display = 'none';
+            document.getElementById('assetName').value = '';
+            document.getElementById('assetValue').value = '';
+        }
+
+        function renderAssetList() {
+            const container = document.getElementById('assetList');
+            const assets = data.assets.slice().reverse();
+            if (assets.length === 0) {
+                container.innerHTML = '<p style="color:#7f8c8d;text-align:center;padding:20px;">Belum ada aset atau utang</p>';
+                return;
+            }
+            const catMap = { liquid: '🟢 Likuid', investment: '🔵 Investasi', business: '🟣 Bisnis', productive: '🟡 Produktif', personal: '⚪ Pribadi', liability: '🔴 Liabilitas' };
+            container.innerHTML = assets.map((asset, index) => {
+                const isLiability = asset.category === 'liability';
+                const realIndex = data.assets.length - 1 - index;
+                return '<div class="history-item"><div class="left"><span>' + (catMap[asset.category] || asset.category) + '</span><span class="category">' + asset.name + ' • ' + new Date(asset.date).toLocaleDateString('id-ID') + '</span></div><span class="amount ' + (isLiability ? 'negative' : 'positive') + '">' + (isLiability ? '-' : '+') + formatRupiah(asset.value) + ' <button onclick="deleteAsset(' + realIndex + ')" style="margin-left:10px;background:#e74c3c;color:#fff;border:none;padding:2px 10px;border-radius:5px;cursor:pointer;font-size:12px;">✕</button></span></div>';
+            }).join('');
+        }
+
+        function deleteAsset(index) {
+            if (confirm('Hapus aset ini?')) { data.assets.splice(index, 1);
+                saveData();
+                updateAll(); }
+        }
+
+        // ====== GOALS MANAGEMENT ======
+        function addGoal() {
+            const type = document.getElementById('goalType').value;
+            const target = parseInt(document.getElementById('goalTarget').value);
+            if (!target || target <= 0) { alert('Masukkan target yang valid!'); return; }
+            data.goals.push({ type, target, createdAt: new Date().toISOString() });
+            saveData();
+            renderGoals();
+            updateFreedom();
+            document.getElementById('goalTarget').value = '';
+        }
+
+        function renderGoals() {
+            const container = document.getElementById('goalList');
+            const goals = data.goals || [];
+            if (goals.length === 0) {
+                container.innerHTML = '<p style="color:#7f8c8d;text-align:center;padding:20px;">Belum ada target</p>';
+                return;
+            }
+            container.innerHTML = goals.map((goal, index) => {
+                let progress = 0,
+                    current = 0;
+                if (goal.type === 'Financial Freedom') current = calculateNetWorth();
+                else current = calculateTotalAssets();
+                progress = Math.min((current / goal.target) * 100, 100);
+                return '<div class="goal-item"><div class="goal-header"><span class="goal-name">🎯 ' + goal.type + '</span><span class="goal-progress-text">' + formatRupiah(current) + ' / ' + formatRupiah(goal.target) + '</span></div><div class="progress-bar"><div class="progress-fill" style="width:' + progress + '%"></div></div><p style="margin-top:8px;font-size:13px;color:#7f8c8d;">Progress: ' + Math.round(progress) + '% ' + (progress >= 100 ? ' ✅ Tercapai!' : '') + '</p><button onclick="deleteGoal(' + index + ')" style="margin-top:8px;background:#e74c3c;color:#fff;border:none;padding:5px 12px;border-radius:5px;cursor:pointer;font-size:12px;">Hapus</button></div>';
+            }).join('');
+        }
+
+        function deleteGoal(index) {
+            if (confirm('Hapus target ini?')) { data.goals.splice(index, 1);
+                saveData();
+                renderGoals();
+                updateFreedom(); }
+        }
+
+        // ====== UPDATE ALL ======
+        function updateAll() {
+            updateDashboard();
+            updatePersonal();
+            updateBusiness();
+            updatePortfolio();
+            updateFreedom();
+            updateDate();
+        }
+
+        // ====== UTILITY ======
+        function formatRupiah(amount) {
+            if (isNaN(amount) || amount === null || amount === undefined) amount = 0;
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        console.log('🚀 Finance Roadmap v2 siap!');
+    </script>
+</body>
+</html>
